@@ -149,7 +149,7 @@ QMUISynthesizeIdCopyProperty(qmui_themeDidChangeBlock, setQmui_themeDidChangeBlo
         }
         
         if (isOtherObject || isValidatedColor || isValidatedImage || isValidatedEffect) {
-            [self performSelector:setter withObject:value];
+            if (value != nil) [self performSelector:setter withObject:value];
         }
         EndIgnorePerformSelectorLeaksWarning
     }];
